@@ -3,6 +3,8 @@ import UniformTypeIdentifiers
 
 struct HomeView: View {
     @EnvironmentObject private var appState: AppState
+    @EnvironmentObject private var purchases: PurchaseManager
+    @State private var showPaywall = false
 
     var body: some View {
         NavigationStack {
@@ -14,7 +16,19 @@ struct HomeView: View {
                 }
             }
             .navigationTitle("HtmlFox")
+            .sheet(isPresented: $showPaywall) {
+                PaywallView()
+            }
             .toolbar {
+                if !purchases.isPurchased {
+                    ToolbarItem(placement: .navigationBarLeading) {
+                        Button {
+                            showPaywall = true
+                        } label: {
+                            Label("Unlock Pro", systemImage: "lock.open")
+                        }
+                    }
+                }
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
                         appState.openImporter()

@@ -33,6 +33,8 @@
 		10000000000000000000011A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10000000000000000000001A /* Assets.xcassets */; };
 		10000000000000000000011B /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 10000000000000000000001B /* PrivacyInfo.xcprivacy */; };
 		10000000000000000000011C /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 10000000000000000000001C /* Localizable.xcstrings */; };
+		10000000000000000000011D /* PurchaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10000000000000000000001D /* PurchaseManager.swift */; };
+		10000000000000000000011E /* PaywallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10000000000000000000001E /* PaywallView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +66,8 @@
 		10000000000000000000001A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		10000000000000000000001B /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		10000000000000000000001C /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		10000000000000000000001D /* PurchaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseManager.swift; sourceTree = "<group>"; };
+		10000000000000000000001E /* PaywallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +136,7 @@
 				10000000000000000000000C /* PreviewEditScriptStore.swift */,
 				10000000000000000000000D /* RecentDocumentStore.swift */,
 				10000000000000000000000E /* TemporaryFileStore.swift */,
+				10000000000000000000001D /* PurchaseManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -143,6 +148,7 @@
 				100000000000000000000010 /* HomeView.swift */,
 				100000000000000000000011 /* PreviewScreen.swift */,
 				100000000000000000000012 /* SourceEditorScreen.swift */,
+				10000000000000000000001E /* PaywallView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -270,6 +276,8 @@
 				100000000000000000000112 /* SourceEditorScreen.swift in Sources */,
 				100000000000000000000116 /* AppChrome.swift in Sources */,
 				100000000000000000000117 /* PreviewViewportMode.swift in Sources */,
+				10000000000000000000011D /* PurchaseManager.swift in Sources */,
+				10000000000000000000011E /* PaywallView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -402,7 +410,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = HtmlFoxIOS/Resources/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.htmlfox.ios;
 				PRODUCT_NAME = HtmlFox;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -423,7 +431,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = HtmlFoxIOS/Resources/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.htmlfox.ios;
 				PRODUCT_NAME = HtmlFox;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

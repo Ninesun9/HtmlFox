@@ -21,11 +21,37 @@
         }
       }
     },
-    "%lld%%" : {
-
+    "A one-time purchase. Yours forever." : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "一次性购买，永久使用。"
+          }
+        }
+      }
+    },
+    "Close" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "关闭"
+          }
+        }
+      }
+    },
+    "Could not verify the purchase." : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "无法验证此次购买。"
+          }
+        }
+      }
     },
     "Done" : {
-      "extractionState" : "stale",
       "localizations" : {
         "zh-Hans" : {
           "stringUnit" : {
@@ -36,12 +62,21 @@
       }
     },
     "Edit" : {
-      "extractionState" : "stale",
       "localizations" : {
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "编辑"
+          }
+        }
+      }
+    },
+    "Edit in preview and source" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "预览与源码编辑"
           }
         }
       }
@@ -66,6 +101,26 @@
         }
       }
     },
+    "Export as HTML" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "导出为 HTML"
+          }
+        }
+      }
+    },
+    "Export as PDF" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "导出为 PDF"
+          }
+        }
+      }
+    },
     "Export HTML" : {
       "localizations" : {
         "zh-Hans" : {
@@ -86,6 +141,16 @@
         }
       }
     },
+    "Free trial: %lld days left" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "免费试用：还剩 %lld 天"
+          }
+        }
+      }
+    },
     "HTML editor for iOS" : {
       "localizations" : {
         "zh-Hans" : {
@@ -95,9 +160,6 @@
           }
         }
       }
-    },
-    "HtmlFox" : {
-
     },
     "Mobile" : {
       "localizations" : {
@@ -135,6 +197,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "好"
+          }
+        }
+      }
+    },
+    "One-time purchase, no subscription" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "一次买断，无订阅"
           }
         }
       }
@@ -179,12 +251,32 @@
         }
       }
     },
+    "Privacy Policy" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "隐私政策"
+          }
+        }
+      }
+    },
     "Recent" : {
       "localizations" : {
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "最近打开"
+          }
+        }
+      }
+    },
+    "Restore Purchase" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "恢复购买"
           }
         }
       }
@@ -209,12 +301,32 @@
         }
       }
     },
+    "Terms of Use" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "使用条款"
+          }
+        }
+      }
+    },
     "The preview is not ready yet." : {
       "localizations" : {
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "预览尚未就绪。"
+          }
+        }
+      }
+    },
+    "The store is unavailable. Please try again later." : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "商店暂不可用，请稍后再试。"
           }
         }
       }
@@ -239,12 +351,62 @@
         }
       }
     },
+    "Unlock" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "解锁"
+          }
+        }
+      }
+    },
+    "Unlock for %@" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ 解锁"
+          }
+        }
+      }
+    },
+    "Unlock HtmlFox Pro" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "解锁 HtmlFox 完整版"
+          }
+        }
+      }
+    },
+    "Unlock Pro" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "解锁完整版"
+          }
+        }
+      }
+    },
     "Web" : {
       "localizations" : {
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "网页"
+          }
+        }
+      }
+    },
+    "Your free trial has ended" : {
+      "localizations" : {
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "免费试用已结束"
           }
         }
       }

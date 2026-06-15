@@ -1,0 +1,45 @@
+{
+  "appPolicies" : {
+    "eula" : "",
+    "policies" : [
+      {
+        "locale" : "en_US",
+        "policyText" : "",
+        "policyURL" : ""
+      }
+    ]
+  },
+  "identifier" : "F0X10000-0000-0000-0000-00000000PROD",
+  "nonRenewingSubscriptions" : [
+
+  ],
+  "products" : [
+    {
+      "displayPrice" : "2.99",
+      "familyShareable" : false,
+      "internalID" : "F0X20000-0000-0000-0000-00000000PRO1",
+      "localizations" : [
+        {
+          "description" : "Unlock editing and export forever.",
+          "displayName" : "HtmlFox Pro",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.htmlfox.ios.pro",
+      "referenceName" : "HtmlFox Pro Lifetime Unlock",
+      "type" : "NonConsumable"
+    }
+  ],
+  "settings" : {
+    "_applicationInternalID" : "0",
+    "_developerTeamID" : "0",
+    "_failTransactionsEnabled" : false
+  },
+  "subscriptionGroups" : [
+
+  ],
+  "version" : {
+    "major" : 3,
+    "minor" : 0
+  }
+}

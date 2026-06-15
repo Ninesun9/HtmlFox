@@ -2,6 +2,7 @@ import SwiftUI
 
 struct PreviewScreen: View {
     @EnvironmentObject private var appState: AppState
+    @EnvironmentObject private var purchases: PurchaseManager
     let document: HtmlDocument
 
     @StateObject private var webViewController = WebPreviewController()
@@ -12,6 +13,7 @@ struct PreviewScreen: View {
     @State private var searchCurrentIndex = 0
     @State private var viewportMode: PreviewViewportMode = .mobile
     @State private var webZoom = 0.75
+    @State private var showPaywall = false
 
     var body: some View {
         VStack(spacing: 0) {
@@ -22,6 +24,9 @@ struct PreviewScreen: View {
         .background(previewBackground)
         .navigationTitle(title)
         .navigationBarTitleDisplayMode(.inline)
+        .sheet(isPresented: $showPaywall) {
+            PaywallView()
+        }
         .toolbar {
             ToolbarItemGroup(placement: .navigationBarTrailing) {
                 Button {
@@ -32,19 +37,19 @@ struct PreviewScreen: View {
 
                 Menu {
                     Button {
-                        appState.setMode(.editSource)
+                        requirePro { appState.setMode(.editSource) }
                     } label: {
                         Label("Source", systemImage: "chevron.left.forwardslash.chevron.right")
                     }
 
                     Button {
-                        exportPDF()
+                        requirePro { exportPDF() }
                     } label: {
                         Label("Export PDF", systemImage: "doc.richtext")
                     }
 
                     Button {
-                        appState.exportHTML()
+                        requirePro { appState.exportHTML() }
                     } label: {
                         Label("Export HTML", systemImage: "square.and.arrow.up")
                     }
@@ -369,7 +374,16 @@ struct PreviewScreen: View {
                 appState.setMode(.read)
             }
         } else {
-            appState.setMode(.editPreview)
+            requirePro { appState.setMode(.editPreview) }
+        }
+    }
+
+    /// Runs the action when editing/export is unlocked, otherwise shows the paywall.
+    private func requirePro(_ action: () -> Void) {
+        if purchases.canUseProFeatures {
+            action()
+        } else {
+            showPaywall = true
         }
     }
 
