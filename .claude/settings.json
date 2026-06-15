@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(xcodebuild -project HtmlFox.xcodeproj -scheme HtmlFox -sdk iphonesimulator -destination 'generic/platform=iOS Simulator' -configuration Debug CODE_SIGNING_ALLOWED=NO build)",
+      "Bash(xcodegen --version)",
+      "Bash(brew install *)"
+    ]
+  }
+}

@@ -1,0 +1,461 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		100000000000000000000101 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000001 /* AppState.swift */; };
+		100000000000000000000102 /* HtmlFoxIOSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000002 /* HtmlFoxIOSApp.swift */; };
+		100000000000000000000103 /* ShareSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000003 /* ShareSheet.swift */; };
+		100000000000000000000104 /* SourceTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000004 /* SourceTextView.swift */; };
+		100000000000000000000105 /* WebPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000005 /* WebPreview.swift */; };
+		100000000000000000000106 /* DocumentMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000006 /* DocumentMode.swift */; };
+		100000000000000000000107 /* ExportFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000007 /* ExportFormat.swift */; };
+		100000000000000000000108 /* HtmlDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000008 /* HtmlDocument.swift */; };
+		100000000000000000000109 /* RecentDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000009 /* RecentDocument.swift */; };
+		10000000000000000000010A /* ShareItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10000000000000000000000A /* ShareItem.swift */; };
+		10000000000000000000010B /* DocumentImporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10000000000000000000000B /* DocumentImporter.swift */; };
+		10000000000000000000010C /* PreviewEditScriptStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10000000000000000000000C /* PreviewEditScriptStore.swift */; };
+		10000000000000000000010D /* RecentDocumentStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10000000000000000000000D /* RecentDocumentStore.swift */; };
+		10000000000000000000010E /* TemporaryFileStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10000000000000000000000E /* TemporaryFileStore.swift */; };
+		10000000000000000000010F /* DocumentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10000000000000000000000F /* DocumentView.swift */; };
+		100000000000000000000110 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000010 /* HomeView.swift */; };
+		100000000000000000000111 /* PreviewScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000011 /* PreviewScreen.swift */; };
+		100000000000000000000112 /* SourceEditorScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000012 /* SourceEditorScreen.swift */; };
+		100000000000000000000113 /* enablePreviewEditMode.js in Resources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000014 /* enablePreviewEditMode.js */; };
+		100000000000000000000114 /* extractEditedHTML.js in Resources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000015 /* extractEditedHTML.js */; };
+		100000000000000000000115 /* disablePreviewEditMode.js in Resources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000016 /* disablePreviewEditMode.js */; };
+		100000000000000000000116 /* AppChrome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000018 /* AppChrome.swift */; };
+		100000000000000000000117 /* PreviewViewportMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100000000000000000000019 /* PreviewViewportMode.swift */; };
+		10000000000000000000011A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10000000000000000000001A /* Assets.xcassets */; };
+		10000000000000000000011B /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 10000000000000000000001B /* PrivacyInfo.xcprivacy */; };
+		10000000000000000000011C /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 10000000000000000000001C /* Localizable.xcstrings */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		100000000000000000000001 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		100000000000000000000002 /* HtmlFoxIOSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HtmlFoxIOSApp.swift; sourceTree = "<group>"; };
+		100000000000000000000003 /* ShareSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareSheet.swift; sourceTree = "<group>"; };
+		100000000000000000000004 /* SourceTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceTextView.swift; sourceTree = "<group>"; };
+		100000000000000000000005 /* WebPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebPreview.swift; sourceTree = "<group>"; };
+		100000000000000000000006 /* DocumentMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentMode.swift; sourceTree = "<group>"; };
+		100000000000000000000007 /* ExportFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportFormat.swift; sourceTree = "<group>"; };
+		100000000000000000000008 /* HtmlDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HtmlDocument.swift; sourceTree = "<group>"; };
+		100000000000000000000009 /* RecentDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentDocument.swift; sourceTree = "<group>"; };
+		10000000000000000000000A /* ShareItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareItem.swift; sourceTree = "<group>"; };
+		10000000000000000000000B /* DocumentImporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentImporter.swift; sourceTree = "<group>"; };
+		10000000000000000000000C /* PreviewEditScriptStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewEditScriptStore.swift; sourceTree = "<group>"; };
+		10000000000000000000000D /* RecentDocumentStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentDocumentStore.swift; sourceTree = "<group>"; };
+		10000000000000000000000E /* TemporaryFileStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemporaryFileStore.swift; sourceTree = "<group>"; };
+		10000000000000000000000F /* DocumentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentView.swift; sourceTree = "<group>"; };
+		100000000000000000000010 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		100000000000000000000011 /* PreviewScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewScreen.swift; sourceTree = "<group>"; };
+		100000000000000000000012 /* SourceEditorScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceEditorScreen.swift; sourceTree = "<group>"; };
+		100000000000000000000013 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		100000000000000000000014 /* enablePreviewEditMode.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = enablePreviewEditMode.js; sourceTree = "<group>"; };
+		100000000000000000000015 /* extractEditedHTML.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = extractEditedHTML.js; sourceTree = "<group>"; };
+		100000000000000000000016 /* disablePreviewEditMode.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = disablePreviewEditMode.js; sourceTree = "<group>"; };
+		100000000000000000000017 /* HtmlFox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HtmlFox.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		100000000000000000000018 /* AppChrome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppChrome.swift; sourceTree = "<group>"; };
+		100000000000000000000019 /* PreviewViewportMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewViewportMode.swift; sourceTree = "<group>"; };
+		10000000000000000000001A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		10000000000000000000001B /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		10000000000000000000001C /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		100000000000000000000201 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		100000000000000000000301 = {
+			isa = PBXGroup;
+			children = (
+				100000000000000000000302 /* HtmlFoxIOS */,
+				100000000000000000000308 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		100000000000000000000302 /* HtmlFoxIOS */ = {
+			isa = PBXGroup;
+			children = (
+				100000000000000000000001 /* AppState.swift */,
+				100000000000000000000002 /* HtmlFoxIOSApp.swift */,
+				100000000000000000000303 /* Components */,
+				100000000000000000000304 /* Models */,
+				100000000000000000000305 /* Services */,
+				100000000000000000000306 /* Views */,
+				100000000000000000000307 /* Scripts */,
+				10000000000000000000001A /* Assets.xcassets */,
+				100000000000000000000309 /* Resources */,
+			);
+			path = HtmlFoxIOS;
+			sourceTree = "<group>";
+		};
+		100000000000000000000303 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				100000000000000000000003 /* ShareSheet.swift */,
+				100000000000000000000004 /* SourceTextView.swift */,
+				100000000000000000000005 /* WebPreview.swift */,
+				100000000000000000000018 /* AppChrome.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		100000000000000000000304 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				100000000000000000000006 /* DocumentMode.swift */,
+				100000000000000000000007 /* ExportFormat.swift */,
+				100000000000000000000008 /* HtmlDocument.swift */,
+				100000000000000000000009 /* RecentDocument.swift */,
+				10000000000000000000000A /* ShareItem.swift */,
+				100000000000000000000019 /* PreviewViewportMode.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		100000000000000000000305 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				10000000000000000000000B /* DocumentImporter.swift */,
+				10000000000000000000000C /* PreviewEditScriptStore.swift */,
+				10000000000000000000000D /* RecentDocumentStore.swift */,
+				10000000000000000000000E /* TemporaryFileStore.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		100000000000000000000306 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				10000000000000000000000F /* DocumentView.swift */,
+				100000000000000000000010 /* HomeView.swift */,
+				100000000000000000000011 /* PreviewScreen.swift */,
+				100000000000000000000012 /* SourceEditorScreen.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		100000000000000000000307 /* Scripts */ = {
+			isa = PBXGroup;
+			children = (
+				100000000000000000000016 /* disablePreviewEditMode.js */,
+				100000000000000000000014 /* enablePreviewEditMode.js */,
+				100000000000000000000015 /* extractEditedHTML.js */,
+			);
+			path = Scripts;
+			sourceTree = "<group>";
+		};
+		100000000000000000000308 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				100000000000000000000017 /* HtmlFox.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		100000000000000000000309 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				100000000000000000000013 /* Info.plist */,
+				10000000000000000000001B /* PrivacyInfo.xcprivacy */,
+				10000000000000000000001C /* Localizable.xcstrings */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		100000000000000000000401 /* HtmlFox */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 100000000000000000000702 /* Build configuration list for PBXNativeTarget "HtmlFox" */;
+			buildPhases = (
+				100000000000000000000601 /* Sources */,
+				100000000000000000000201 /* Frameworks */,
+				100000000000000000000602 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HtmlFox;
+			productName = HtmlFox;
+			productReference = 100000000000000000000017 /* HtmlFox.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		100000000000000000000501 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2650;
+				LastUpgradeCheck = 2650;
+				TargetAttributes = {
+					100000000000000000000401 = {
+						CreatedOnToolsVersion = 26.5;
+					};
+				};
+			};
+			buildConfigurationList = 100000000000000000000701 /* Build configuration list for PBXProject "HtmlFox" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				"zh-Hans",
+			);
+			mainGroup = 100000000000000000000301;
+			productRefGroup = 100000000000000000000308 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				100000000000000000000401 /* HtmlFox */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		100000000000000000000602 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				100000000000000000000115 /* disablePreviewEditMode.js in Resources */,
+				100000000000000000000113 /* enablePreviewEditMode.js in Resources */,
+				100000000000000000000114 /* extractEditedHTML.js in Resources */,
+				10000000000000000000011A /* Assets.xcassets in Resources */,
+				10000000000000000000011B /* PrivacyInfo.xcprivacy in Resources */,
+				10000000000000000000011C /* Localizable.xcstrings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		100000000000000000000601 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				100000000000000000000101 /* AppState.swift in Sources */,
+				100000000000000000000102 /* HtmlFoxIOSApp.swift in Sources */,
+				100000000000000000000103 /* ShareSheet.swift in Sources */,
+				100000000000000000000104 /* SourceTextView.swift in Sources */,
+				100000000000000000000105 /* WebPreview.swift in Sources */,
+				100000000000000000000106 /* DocumentMode.swift in Sources */,
+				100000000000000000000107 /* ExportFormat.swift in Sources */,
+				100000000000000000000108 /* HtmlDocument.swift in Sources */,
+				100000000000000000000109 /* RecentDocument.swift in Sources */,
+				10000000000000000000010A /* ShareItem.swift in Sources */,
+				10000000000000000000010B /* DocumentImporter.swift in Sources */,
+				10000000000000000000010C /* PreviewEditScriptStore.swift in Sources */,
+				10000000000000000000010D /* RecentDocumentStore.swift in Sources */,
+				10000000000000000000010E /* TemporaryFileStore.swift in Sources */,
+				10000000000000000000010F /* DocumentView.swift in Sources */,
+				100000000000000000000110 /* HomeView.swift in Sources */,
+				100000000000000000000111 /* PreviewScreen.swift in Sources */,
+				100000000000000000000112 /* SourceEditorScreen.swift in Sources */,
+				100000000000000000000116 /* AppChrome.swift in Sources */,
+				100000000000000000000117 /* PreviewViewportMode.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		100000000000000000000801 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		100000000000000000000802 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		100000000000000000000803 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = HtmlFoxIOS/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.htmlfox.ios;
+				PRODUCT_NAME = HtmlFox;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		100000000000000000000804 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = HtmlFoxIOS/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.htmlfox.ios;
+				PRODUCT_NAME = HtmlFox;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		100000000000000000000701 /* Build configuration list for PBXProject "HtmlFox" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				100000000000000000000801 /* Debug */,
+				100000000000000000000802 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		100000000000000000000702 /* Build configuration list for PBXNativeTarget "HtmlFox" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				100000000000000000000803 /* Debug */,
+				100000000000000000000804 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 100000000000000000000501 /* Project object */;
+}

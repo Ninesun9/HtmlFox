@@ -1,0 +1,18 @@
+# macOS
+.DS_Store
+
+# Xcode user state & build output
+xcuserdata/
+*.xcuserstate
+build/
+DerivedData/
+
+# Old project backup (not for publishing)
+HtmlFoxIOS.xcodeproj.backup/
+
+# Swift Package Manager
+.swiftpm/
+.build/
+
+# Claude Code local/personal settings
+.claude/settings.local.json
