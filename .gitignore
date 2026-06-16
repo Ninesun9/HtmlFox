@@ -16,3 +16,4 @@ HtmlFoxIOS.xcodeproj.backup/
 
 # Claude Code local/personal settings
 .claude/settings.local.json
+.tmp-fixes-backup/
