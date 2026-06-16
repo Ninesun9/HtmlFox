@@ -93,6 +93,13 @@ final class WebPreviewController: ObservableObject {
                             return NodeFilter.FILTER_REJECT;
                         }
 
+                        // Skip text that isn't actually rendered (display:none, or an
+                        // ancestor that is) so the count matches what window.find,
+                        // which only navigates visible matches, can reach.
+                        if (parent.getClientRects().length === 0) {
+                            return NodeFilter.FILTER_REJECT;
+                        }
+
                         return NodeFilter.FILTER_ACCEPT;
                     }
                 }
@@ -135,21 +142,32 @@ final class WebPreviewController: ObservableObject {
             return
         }
 
-        let config = WKPDFConfiguration()
-        config.rect = CGRect(origin: .zero, size: webView.scrollView.contentSize)
+        // Paginate across US-Letter pages with UIPrintPageRenderer instead of
+        // WKWebView.createPDF: createPDF renders the whole document onto a single
+        // page, which a long page can push past the PDF max page size (~14 400 pt),
+        // producing a clipped or blank file.
+        let renderer = UIPrintPageRenderer()
+        renderer.addPrintFormatter(webView.viewPrintFormatter(), startingAtPageAt: 0)
 
-        webView.createPDF(configuration: config) { result in
-            switch result {
-            case .success(let data):
-                do {
-                    let url = try self.temporaryFileStore.writePDF(data: data, fileName: fileName)
-                    completion(.success(url))
-                } catch {
-                    completion(.failure(error))
-                }
-            case .failure(let error):
-                completion(.failure(error))
-            }
+        let pageRect = CGRect(x: 0, y: 0, width: 612, height: 792)   // US Letter @ 72 dpi
+        let printableRect = pageRect.insetBy(dx: 36, dy: 36)         // 0.5" margins
+        renderer.setValue(NSValue(cgRect: pageRect), forKey: "paperRect")
+        renderer.setValue(NSValue(cgRect: printableRect), forKey: "printableRect")
+
+        let pdfData = NSMutableData()
+        UIGraphicsBeginPDFContextToData(pdfData, pageRect, nil)
+        let pageCount = max(renderer.numberOfPages, 1)
+        for index in 0..<pageCount {
+            UIGraphicsBeginPDFPage()
+            renderer.drawPage(at: index, in: pageRect)
+        }
+        UIGraphicsEndPDFContext()
+
+        do {
+            let url = try temporaryFileStore.writePDF(data: pdfData as Data, fileName: fileName)
+            completion(.success(url))
+        } catch {
+            completion(.failure(error))
         }
     }
 

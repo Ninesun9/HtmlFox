@@ -14,6 +14,7 @@ struct PreviewScreen: View {
     @State private var viewportMode: PreviewViewportMode = .mobile
     @State private var webZoom = 0.75
     @State private var showPaywall = false
+    @State private var searchTask: Task<Void, Never>?
 
     var body: some View {
         VStack(spacing: 0) {
@@ -24,6 +25,12 @@ struct PreviewScreen: View {
         .background(previewBackground)
         .navigationTitle(title)
         .navigationBarTitleDisplayMode(.inline)
+        .onChange(of: document.html) { _ in
+            // The rendered DOM changed (edit committed, or returned from source
+            // editing) — recompute the search against the new content.
+            scheduleSearchUpdate()
+        }
+        .onDisappear { searchTask?.cancel() }
         .sheet(isPresented: $showPaywall) {
             PaywallView()
         }
@@ -85,9 +92,10 @@ struct PreviewScreen: View {
             return
         }
 
+        let documentID = document.id
         webViewController.finishEditing { html in
             if let html {
-                appState.updateCurrentHTML(html)
+                appState.updateCurrentHTML(html, for: documentID)
             }
             appState.setMode(.read)
             action()
@@ -100,8 +108,9 @@ struct PreviewScreen: View {
             let cardWidth = min(viewportMode.viewportWidth, availableWidth)
             // Never force the card taller than the visible canvas — on iPhone
             // landscape / iPad split view the previous 360 floor pushed the card
-            // (and shadow) outside the frame.
-            let cardHeight = max(geometry.size.height - 32, 0)
+            // (and shadow) outside the frame. Keep at least 1pt so the web view is
+            // never given a zero-height frame.
+            let cardHeight = max(geometry.size.height - 32, 1)
             let webScale = CGFloat(webZoom)
             let webWidth = viewportMode.viewportWidth
             let webDisplayHeight = cardHeight
@@ -146,7 +155,7 @@ struct PreviewScreen: View {
             baseURL: document.sandboxURL?.deletingLastPathComponent(),
             controller: webViewController,
             onHTMLChanged: { html in
-                appState.updateCurrentHTML(html)
+                appState.updateCurrentHTML(html, for: document.id)
             }
         )
         .frame(width: width, height: height)
@@ -264,7 +273,7 @@ struct PreviewScreen: View {
                     .submitLabel(.search)
                     .focused($isSearchFocused)
                     .onChange(of: searchText) { _ in
-                        updateSearchCount()
+                        scheduleSearchUpdate()
                     }
                     .onSubmit {
                         findNext()
@@ -339,9 +348,31 @@ struct PreviewScreen: View {
 
     private func clearSearch() {
         searchText = ""
+        clearSearchResults()
+    }
+
+    private func clearSearchResults() {
         searchStatus = ""
         searchMatchCount = 0
         searchCurrentIndex = 0
+    }
+
+    /// Debounces search so we don't fire a JavaScript count + find on every
+    /// keystroke (and so stale queries can't move the selection).
+    private func scheduleSearchUpdate() {
+        searchTask?.cancel()
+
+        let query = searchText.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !query.isEmpty else {
+            clearSearchResults()
+            return
+        }
+
+        searchTask = Task {
+            try? await Task.sleep(nanoseconds: 250_000_000)
+            guard !Task.isCancelled else { return }
+            updateSearchCount()
+        }
     }
 
     private func findNext() {
@@ -361,6 +392,9 @@ struct PreviewScreen: View {
 
         webViewController.find(query, backwards: backwards) { found in
             Task { @MainActor in
+                // Drop results for a query the user has already changed.
+                guard searchText.trimmingCharacters(in: .whitespacesAndNewlines) == query else { return }
+
                 guard found else {
                     searchStatus = String(localized: "No matches")
                     searchCurrentIndex = 0

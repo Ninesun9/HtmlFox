@@ -9,8 +9,10 @@ struct DocumentView: View {
                 switch document.mode {
                 case .editSource:
                     SourceEditorScreen(document: document)
+                        .id(document.id)
                 case .read, .editPreview:
                     PreviewScreen(document: document)
+                        .id(document.id)
                 }
             }
         }

@@ -57,6 +57,6 @@ struct SourceEditorScreen: View {
 
     private func commitDraft() {
         guard draftHTML != document.html else { return }
-        appState.updateCurrentHTML(draftHTML)
+        appState.updateCurrentHTML(draftHTML, for: document.id)
     }
 }

@@ -32,9 +32,9 @@ final class AppState: ObservableObject {
         }
     }
 
-    func openRecent(_ recent: RecentDocument) {
+    func openRecent(_ recent: RecentDocument) async {
         do {
-            let document = try importer.openSandboxDocument(fileName: recent.fileName)
+            let document = try await importer.openSandboxDocument(fileName: recent.fileName)
             currentDocument = document
             remember(document)
         } catch {
@@ -52,8 +52,12 @@ final class AppState: ObservableObject {
         currentDocument = nil
     }
 
-    func updateCurrentHTML(_ html: String) {
+    func updateCurrentHTML(_ html: String, for id: UUID? = nil) {
         guard var document = currentDocument else { return }
+        // Ignore edits emitted by a screen that belongs to a document which is no
+        // longer the current one (e.g. an editor's onDisappear firing after the
+        // user opened a different file) — otherwise stale edits corrupt the new doc.
+        if let id, document.id != id { return }
         document.html = html
         document.isDirty = true
         currentDocument = document

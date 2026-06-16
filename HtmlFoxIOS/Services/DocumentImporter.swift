@@ -9,12 +9,20 @@ struct DocumentImporter {
             }
         }
 
-        let data = try Data(contentsOf: url)
-        let html = Self.decodeHTML(data)
-        let sandboxURL = try copyIntoSandbox(sourceURL: url, data: data)
+        let fileName = url.lastPathComponent
+
+        // Read, decode, and copy off the main thread — large documents (e.g. with
+        // inline base64 images) would otherwise block the UI long enough to be
+        // killed by the watchdog. Returns only Sendable values.
+        let (html, sandboxURL) = try await Task.detached(priority: .userInitiated) { () -> (String, URL) in
+            let data = try Data(contentsOf: url)
+            let html = Self.decodeHTML(data)
+            let sandboxURL = try Self.copyIntoSandbox(sourceURL: url, data: data)
+            return (html, sandboxURL)
+        }.value
 
         return HtmlDocument(
-            fileName: url.lastPathComponent,
+            fileName: fileName,
             originalURL: url,
             sandboxURL: sandboxURL,
             html: html
@@ -22,24 +30,27 @@ struct DocumentImporter {
     }
 
     /// Re-opens a document that was previously imported into the app sandbox.
-    func openSandboxDocument(fileName: String) throws -> HtmlDocument {
-        let url = try importsDirectory().appendingPathComponent(fileName)
-        guard FileManager.default.fileExists(atPath: url.path) else {
-            throw DocumentImporterError.documentUnavailable
-        }
+    func openSandboxDocument(fileName: String) async throws -> HtmlDocument {
+        let (html, url) = try await Task.detached(priority: .userInitiated) { () -> (String, URL) in
+            let url = try Self.importsDirectory().appendingPathComponent(fileName)
+            guard FileManager.default.fileExists(atPath: url.path) else {
+                throw DocumentImporterError.documentUnavailable
+            }
+            let data = try Data(contentsOf: url)
+            return (Self.decodeHTML(data), url)
+        }.value
 
-        let data = try Data(contentsOf: url)
         return HtmlDocument(
             fileName: fileName,
             originalURL: nil,
             sandboxURL: url,
-            html: Self.decodeHTML(data)
+            html: html
         )
     }
 
     /// Removes imported copies that are no longer referenced by the recent list.
     func pruneImports(keeping fileNames: Set<String>) {
-        guard let directory = try? importsDirectory(),
+        guard let directory = try? Self.importsDirectory(),
               let contents = try? FileManager.default.contentsOfDirectory(
                   at: directory,
                   includingPropertiesForKeys: nil
@@ -53,7 +64,7 @@ struct DocumentImporter {
         }
     }
 
-    func importsDirectory() throws -> URL {
+    static func importsDirectory() throws -> URL {
         let documentsURL = try FileManager.default.url(
             for: .documentDirectory,
             in: .userDomainMask,
@@ -71,7 +82,7 @@ struct DocumentImporter {
             ?? String(decoding: data, as: UTF8.self)
     }
 
-    private func copyIntoSandbox(sourceURL: URL, data: Data) throws -> URL {
+    private static func copyIntoSandbox(sourceURL: URL, data: Data) throws -> URL {
         let importsURL = try importsDirectory()
         let destinationURL = importsURL.appendingPathComponent(sourceURL.lastPathComponent)
         if FileManager.default.fileExists(atPath: destinationURL.path) {

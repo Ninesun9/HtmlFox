@@ -98,7 +98,7 @@ struct HomeView: View {
             List {
                 ForEach(appState.recentDocuments) { recent in
                     Button {
-                        appState.openRecent(recent)
+                        Task { await appState.openRecent(recent) }
                     } label: {
                         HStack(spacing: 12) {
                             Image(systemName: "doc.text")
@@ -143,12 +143,14 @@ struct HomeView: View {
         }
     }
 
+    // Mirror the document types declared in Info.plist (public.html / public.xhtml)
+    // so the in-app picker and "Open with HtmlFox" accept the same set. `.html`
+    // already covers the `.htm` extension.
     private static let importContentTypes: [UTType] = {
         var types: [UTType] = [.html]
         if let xhtml = UTType("public.xhtml") {
             types.append(xhtml)
         }
-        types.append(.text)
         return types
     }()
 }
