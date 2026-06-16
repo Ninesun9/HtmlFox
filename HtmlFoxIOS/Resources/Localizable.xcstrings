@@ -1,6 +1,9 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "·" : {
+
+    },
     "%lld of %lld" : {
       "localizations" : {
         "zh-Hans" : {
@@ -20,6 +23,9 @@
           }
         }
       }
+    },
+    "%lld%%" : {
+
     },
     "A one-time purchase. Yours forever." : {
       "localizations" : {
@@ -160,6 +166,9 @@
           }
         }
       }
+    },
+    "HtmlFox" : {
+
     },
     "Mobile" : {
       "localizations" : {
