@@ -18,6 +18,10 @@ struct DocumentImporter {
             let data = try Data(contentsOf: url)
             let html = Self.decodeHTML(data)
             let sandboxURL = try Self.copyIntoSandbox(sourceURL: url, data: data)
+            // When another app opens/shares a file into HtmlFox, iOS first drops a
+            // copy in Documents/Inbox and calls onOpenURL with it. We've now copied
+            // it into Imports, so remove the Inbox leftover to stop it accumulating.
+            Self.removeIfInInbox(url)
             return (html, sandboxURL)
         }.value
 
@@ -80,6 +84,24 @@ struct DocumentImporter {
         String(data: data, encoding: .utf8)
             ?? String(data: data, encoding: .unicode)
             ?? String(decoding: data, as: UTF8.self)
+    }
+
+    /// Deletes a source file only if it lives in our own Documents/Inbox (i.e. a
+    /// copy iOS made for an "Open in"/share). External files chosen via the
+    /// document picker live elsewhere and are never touched.
+    private static func removeIfInInbox(_ url: URL) {
+        guard let documentsURL = try? FileManager.default.url(
+            for: .documentDirectory,
+            in: .userDomainMask,
+            appropriateFor: nil,
+            create: false
+        ) else {
+            return
+        }
+        let inboxPath = documentsURL.appendingPathComponent("Inbox", isDirectory: true).path
+        if url.path.hasPrefix(inboxPath) {
+            try? FileManager.default.removeItem(at: url)
+        }
     }
 
     private static func copyIntoSandbox(sourceURL: URL, data: Data) throws -> URL {
