@@ -25,7 +25,7 @@ struct PreviewScreen: View {
         .background(previewBackground)
         .navigationTitle(title)
         .navigationBarTitleDisplayMode(.inline)
-        .onChange(of: document.html) { _ in
+        .onChange(of: document.html) {
             // The rendered DOM changed (edit committed, or returned from source
             // editing) — recompute the search against the new content.
             scheduleSearchUpdate()
@@ -272,7 +272,7 @@ struct PreviewScreen: View {
                     .autocorrectionDisabled()
                     .submitLabel(.search)
                     .focused($isSearchFocused)
-                    .onChange(of: searchText) { _ in
+                    .onChange(of: searchText) {
                         scheduleSearchUpdate()
                     }
                     .onSubmit {

@@ -8,7 +8,7 @@ The app is **fully on-device**. It has no accounts, no analytics, no advertising
 
 **Languages:** English · [简体中文](README.zh-CN.md)
 
-- Platform: iOS 16+ (iPhone & iPad) · Built with: SwiftUI + WebKit + StoreKit 2 · Bundle ID: `com.htmlfox.ios`
+- Platform: iOS 17+ (iPhone & iPad) · Built with: SwiftUI + WebKit + StoreKit 2 · Bundle ID: `com.htmlfox.ios`
 
 ---
 
@@ -127,7 +127,7 @@ HtmlFox/
 
 ## Requirements
 
-- **iOS 16.0** or later (iPhone and iPad)
+- **iOS 17.0** or later (iPhone and iPad)
 - **Xcode 16** or later
 - An Apple Developer account (to run on device and to submit to the App Store)
 
@@ -167,7 +167,7 @@ The free trial is independent of StoreKit: it starts on first launch and is read
 | Product name | `HtmlFox` |
 | Bundle identifier | `com.htmlfox.ios` |
 | IAP product ID | `com.htmlfox.ios.pro` (non-consumable, US$2.99) |
-| Minimum iOS | 16.0 |
+| Minimum iOS | 17.0 |
 | Devices | iPhone & iPad (`TARGETED_DEVICE_FAMILY = 1,2`) |
 | Interface | SwiftUI |
 | App icon | `Assets.xcassets/AppIcon` |

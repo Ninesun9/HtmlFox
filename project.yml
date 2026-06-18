@@ -1,7 +1,7 @@
 name: HtmlFox
 options:
   deploymentTarget:
-    iOS: "16.0"
+    iOS: "17.0"
 settings:
   base:
     PRODUCT_BUNDLE_IDENTIFIER: com.htmlfox.ios

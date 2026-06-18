@@ -8,7 +8,7 @@ HtmlFox 可以打开 `.html` / `.htm` / `.xhtml` 文件，以渲染后的文档�
 
 **语言：** [English](README.en.md) · 简体中文
 
-- 平台：iOS 16+（iPhone 与 iPad） · 技术栈：SwiftUI + WebKit + StoreKit 2 · Bundle ID：`com.htmlfox.ios`
+- 平台：iOS 17+（iPhone 与 iPad） · 技术栈：SwiftUI + WebKit + StoreKit 2 · Bundle ID：`com.htmlfox.ios`
 
 ---
 
@@ -127,7 +127,7 @@ HtmlFox/
 
 ## 运行要求
 
-- **iOS 16.0** 或更高（iPhone 与 iPad）
+- **iOS 17.0** 或更高（iPhone 与 iPad）
 - **Xcode 16** 或更高
 - Apple 开发者账号（真机运行与上架 App Store 需要）
 
@@ -167,7 +167,7 @@ open HtmlFox.xcodeproj
 | 产品名称 | `HtmlFox` |
 | Bundle Identifier | `com.htmlfox.ios` |
 | 内购产品 ID | `com.htmlfox.ios.pro`（非消耗型，US$2.99） |
-| 最低 iOS | 16.0 |
+| 最低 iOS | 17.0 |
 | 设备 | iPhone 与 iPad（`TARGETED_DEVICE_FAMILY = 1,2`） |
 | 界面框架 | SwiftUI |
 | 应用图标 | `Assets.xcassets/AppIcon` |

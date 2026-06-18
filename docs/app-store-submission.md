@@ -12,7 +12,7 @@
 | 价格 | 美区 US$2.99 / 中国区约 ¥18 |
 | 隐私 | Data Not Collected（不收集数据） |
 | 隐私政策 URL | https://ninesun9.github.io/htmlfox-privacy/ |
-| 最低系统 | iOS 16.0（iPhone + iPad） |
+| 最低系统 | iOS 17.0（iPhone + iPad） |
 | 分类 | Productivity（副：Developer Tools / Utilities） |
 | 年龄分级 | 4+ |
 | 出口加密 | 豁免（`ITSAppUsesNonExemptEncryption=false` 已设） |

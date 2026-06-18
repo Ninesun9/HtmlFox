@@ -14,7 +14,7 @@ struct HtmlFoxIOSApp: App {
                 .onOpenURL { url in
                     Task { await appState.importDocument(from: url) }
                 }
-                .onChange(of: scenePhase) { phase in
+                .onChange(of: scenePhase) { _, phase in
                     if phase == .active {
                         purchases.refreshTrialState()
                     }
